@@ -20,7 +20,7 @@ export const Popular = async () => {
         <div className="flex flex-wrap justify-between w-[79.813rem]">
           {data.results.slice(0, 10).map((movie: MovieType) => {
             return (
-              <div className="bg-[#f4f4f5] w-[14rem] h-[27rem] mt-5 overflow-hidden rounded-lg ">
+              <div className=" w-[14rem] h-[27rem] mt-5 overflow-hidden rounded-lg ">
                 <img
                   src={`https://image.tmdb.org/t/p/original/${movie?.poster_path}`}
                   alt=""
@@ -60,7 +60,7 @@ export const Upcoming = async () => {
         <div className="flex flex-wrap justify-between w-[79.813rem]">
           {data.results.slice(0, 10).map((movie: MovieType) => {
             return (
-              <div className="bg-[#f4f4f5] w-[14rem] h-[27rem] mt-5 overflow-hidden rounded-lg ">
+              <div className=" w-[14rem] h-[27rem] mt-5 overflow-hidden rounded-lg ">
                 <img
                   src={`https://image.tmdb.org/t/p/original/${movie?.poster_path}`}
                   alt=""
@@ -100,7 +100,7 @@ export const TopRated = async () => {
         <div className="flex flex-wrap justify-between w-[79.813rem]">
           {data.results.slice(0, 10).map((movie: MovieType) => {
             return (
-              <div className="bg-[#f4f4f5] w-[14rem] h-[27rem] mt-5 overflow-hidden rounded-lg ">
+              <div className="border-gray-600 border-0 w-[14rem] h-[27rem] mt-5 overflow-hidden rounded-lg ">
                 <img
                   src={`https://image.tmdb.org/t/p/original/${movie?.poster_path}`}
                   alt=""
