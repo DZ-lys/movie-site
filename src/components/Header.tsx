@@ -2,7 +2,6 @@ import Image from "next/image";
 import { ModeToggle } from "./ui/theme-toggle";
 import { Input } from "./ui/input";
 import { Genre } from "./ui/genre";
-import { Search } from "lucide-react";
 
 export const Header = async () => {
   return (

@@ -20,13 +20,14 @@ export const Popular = async () => {
         <div className="flex flex-wrap justify-between w-[79.813rem]">
           {data.results.slice(0, 10).map((movie: MovieType) => {
             return (
-              <div className=" w-[14rem] h-[27rem] mt-5 overflow-hidden rounded-lg ">
+              <div className="border-[#8b8b8b37] border-[1px] w-[14rem] h-[27rem] mt-5 overflow-hidden rounded-lg ">
                 <img
                   src={`https://image.tmdb.org/t/p/original/${movie?.poster_path}`}
                   alt=""
                   className="w-[14.rem] h-[21.rem]"
                 />
                 <div className="w-[14rem] h-[4rem] p-2">
+                  <p>⭐{movie?.vote_average}/10</p>
                   <p className="font-normal text-lg ">
                     {movie?.original_title}
                   </p>
@@ -60,13 +61,14 @@ export const Upcoming = async () => {
         <div className="flex flex-wrap justify-between w-[79.813rem]">
           {data.results.slice(0, 10).map((movie: MovieType) => {
             return (
-              <div className=" w-[14rem] h-[27rem] mt-5 overflow-hidden rounded-lg ">
+              <div className="border-[#d9d9d935] border-[1px] w-[14rem] h-[27rem] mt-5 overflow-hidden rounded-lg ">
                 <img
                   src={`https://image.tmdb.org/t/p/original/${movie?.poster_path}`}
                   alt=""
                   className="w-[14.rem] h-[21.rem]"
                 />
                 <div className="w-[14rem] h-[4rem] p-2">
+                  <p>⭐{movie?.vote_average}/10</p>
                   <p className="font-normal text-lg ">
                     {movie?.original_title}
                   </p>
@@ -100,13 +102,14 @@ export const TopRated = async () => {
         <div className="flex flex-wrap justify-between w-[79.813rem]">
           {data.results.slice(0, 10).map((movie: MovieType) => {
             return (
-              <div className="border-gray-600 border-0 w-[14rem] h-[27rem] mt-5 overflow-hidden rounded-lg ">
+              <div className="border-[#d9d9d935] border-[1px] w-[14rem] h-[27rem] mt-5 overflow-hidden rounded-lg ">
                 <img
                   src={`https://image.tmdb.org/t/p/original/${movie?.poster_path}`}
                   alt=""
                   className="w-[14.rem] h-[21.rem]"
                 />
                 <div className="w-[14rem] h-[4rem] p-2">
+                  <p>⭐{movie?.vote_average}/10</p>
                   <p className="font-normal text-lg ">
                     {movie?.original_title}
                   </p>
