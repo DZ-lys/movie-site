@@ -1,8 +1,6 @@
-"use client";
 import * as React from "react";
-import Autoplay from "embla-carousel-autoplay";
-
-import { Card, CardContent } from "./ui/card";
+import { TOKEN } from "@/util/constants";
+import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
@@ -10,27 +8,44 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { MovieType } from "@/util/Movietype";
+import { Button } from "./ui/button";
 
-export function CarouselPlugin() {
-  const plugin = React.useRef(
-    Autoplay({ delay: 5000, stopOnInteraction: true })
+export async function CarouselPlugin() {
+  // Fetch movie
+  const response = await fetch(
+    "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1",
+    {
+      headers: {
+        Authorization: `Bearer ${TOKEN}`,
+        "Content-Type": "application/json",
+      },
+    }
   );
-
+  const data = await response.json();
+  console.log(data);
   return (
-    <Carousel
-      plugins={[plugin.current]}
-      className="w-[100vw] h-[48rem] "
-      onMouseEnter={plugin.current.stop}
-      onMouseLeave={plugin.current.reset}
-    >
-      <CarouselContent>
-        {Array.from({ length: 5 }).map((_, index) => (
+    <Carousel className="relative w-[100vw] h-[600px] m-auto ">
+      <CarouselContent className="w-[100%] h-[600px]  ">
+        {data.results.map((data: MovieType, index: number) => (
           <CarouselItem key={index}>
             <div className="p-1">
-              <Card>
-                <CardContent className="flex items-center justify-center p-64">
-                  <span className="text-4xl font-semibold">{index + 1}</span>
+              <Card className="relative">
+                <CardContent
+                  className=" w-[100%] h-[600px] !bg-center !bg-cover bg-no-repeat aspect-square z-10"
+                  style={{
+                    background: `url( https://image.tmdb.org/t/p/original/${data?.backdrop_path})`,
+                  }}
+                >
+                  {/* <img alt="..loading" className="w-[100%] h-[600px]" /> */}
                 </CardContent>
+                <div className="absolute top-32 left-40 ">
+                  <p>Now Playing:</p>
+                  <h2 className="font-extrabold">{data?.original_title}</h2>
+                  <p>⭐{data?.vote_average}/10</p>
+                  <p className="w-[250px] text-white">{data?.overview}</p>
+                  <Button>watch trailer</Button>
+                </div>
               </Card>
             </div>
           </CarouselItem>
