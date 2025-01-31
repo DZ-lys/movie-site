@@ -3,6 +3,7 @@ import { TOKEN } from "@/util/constants";
 import { MovieType } from "@/util/Movietype";
 import { Card } from "./ui/card";
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 export const Popular = async () => {
   const response = await fetch(
@@ -19,8 +20,10 @@ export const Popular = async () => {
   return (
     <div className="w-[100vw] flex justify-center  ">
       <div className="flex flex-wrap justify-between w-[79.813rem]">
-        <h2>Popular</h2>
-        <p>see more!</p>
+        <h3 className="text-2xl font-semibold ">Popular</h3>
+        <p className="flex">
+          see more <ArrowRight />
+        </p>
         <div className="flex flex-wrap justify-between w-[79.813rem]">
           {data.results.slice(0, 10).map((movie: MovieType, index: number) => {
             return (
@@ -68,8 +71,10 @@ export const Upcoming = async () => {
   return (
     <div className="w-[100vw] flex justify-center  ">
       <div className="flex flex-wrap justify-between w-[79.813rem]">
-        <h2>Upcoming</h2>
-        <p>see more!</p>
+        <h3 className="text-2xl font-semibold ">Upcoming</h3>
+        <p className="flex">
+          see more <ArrowRight />
+        </p>
         <div className="flex flex-wrap justify-between w-[79.813rem]">
           {data.results.slice(0, 10).map((movie: MovieType, index: number) => {
             return (
@@ -117,8 +122,10 @@ export const Top_rated = async () => {
   return (
     <div className="w-[100vw] flex justify-center  ">
       <div className="flex flex-wrap justify-between w-[79.813rem]">
-        <h2>Top Rated</h2>
-        <p>see more!</p>
+        <h3 className="text-2xl font-semibold ">Top Rated</h3>
+        <p className="flex">
+          see more <ArrowRight />
+        </p>
         <div className="flex flex-wrap justify-between w-[79.813rem]">
           {data.results.slice(0, 10).map((movie: MovieType, index: number) => {
             return (

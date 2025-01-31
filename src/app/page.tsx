@@ -7,9 +7,11 @@ export default async function Home() {
     <div className="w-[100vw] ">
       <Header />
       <CarouselPlugin />
-      <Popular />
-      <Upcoming />
-      <Top_rated />
+      <div className="flex flex-col gap-14 mt-14 ">
+        <Popular />
+        <Upcoming />
+        <Top_rated />
+      </div>
     </div>
   );
 }
