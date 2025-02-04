@@ -1,15 +1,16 @@
 import * as React from "react";
 import { TOKEN } from "@/util/constants";
 import { Card, CardContent } from "@/components/ui/card";
+
+import { MovieType } from "@/util/Movietype";
+import { Button } from "./ui/button";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel";
-import { MovieType } from "@/util/Movietype";
-import { Button } from "./ui/button";
+} from "./ui/carousel";
 
 export async function CarouselPlugin() {
   // Fetch movie

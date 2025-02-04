@@ -7,3 +7,6 @@ export type MovieType = {
   id: number;
   overview: string;
 };
+export type GenreType = {
+  name: string;
+};
